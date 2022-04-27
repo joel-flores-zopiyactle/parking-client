@@ -1,0 +1,12 @@
+
+<app-form-filter (filter)="filterData($event)" *ngIf="!showCards"></app-form-filter>
+
+<div *ngIf="showCards">
+    <h4 class="my-md-5 my-sm-2 my-2">Result Filter</h4>
+    <hr>
+    
+    <app-card-parking
+        class="w-100" 
+        *ngFor="let parking of parkings" [parking]="parking">
+    </app-card-parking>
+</div>

@@ -1,0 +1,56 @@
+<h4 class="my-md-5 my-sm-2 my-2">Parking list</h4>
+<hr>
+
+<div class="w-100 d-flex justify-content-end">
+    <!-- Order list price -->
+    <div class="pointer" title="Order list price">
+        <svg  *ngIf="orderParkingsMax" (click)="orderPriceMin()"  xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-sort-down" viewBox="0 0 16 16">
+            <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293V2.5zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>
+        </svg>
+    
+        <svg *ngIf="!orderParkingsMax" (click)="orderPriceMax()" xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-sort-up-alt" viewBox="0 0 16 16">
+            <path d="M3.5 13.5a.5.5 0 0 1-1 0V4.707L1.354 5.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 4.707V13.5zm4-9.5a.5.5 0 0 1 0-1h1a.5.5 0 0 1 0 1h-1zm0 3a.5.5 0 0 1 0-1h3a.5.5 0 0 1 0 1h-3zm0 3a.5.5 0 0 1 0-1h5a.5.5 0 0 1 0 1h-5zM7 12.5a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7a.5.5 0 0 0-.5.5z"/>
+        </svg>
+    </div>
+</div>
+
+<div class="row">
+        
+    <div class="col-md-3 col-sm-12 col-12 d-md-block d-sm-none d-none">
+        <!-- Form Filter -->
+        <app-form-filter (filter)="filterData($event)"></app-form-filter>
+
+    </div>
+
+    <div class="col-md-9 col-sm-12 col-12" *ngIf="!loading">
+
+        <!-- Data -->
+        <div class="d-flex justify-content-between gap-3 flex-wrap mt-md-5 mt-sm-3 mt-3" *ngIf="parkings.length > 0; else thenBlock">
+
+            <app-card-parking class="w-100" *ngFor="let parking of parkings" [parking]="parking">
+            </app-card-parking>
+            
+        </div>
+
+        <!-- Alert not found data -->
+        <ng-template #thenBlock>
+            <div class="alert alert-primary mt-4">
+                <h3 class="md-h3 sm-h5 h5">There is no data</h3>
+            </div>
+        </ng-template>
+
+    </div>
+
+    <!-- Spinner loading -->
+    <div class="col-md-9" *ngIf="loading">
+        <div class="text-center">
+            <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+

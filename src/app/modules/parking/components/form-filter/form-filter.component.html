@@ -1,0 +1,60 @@
+<div class="my-4 border p-3">
+    <h4>Filter</h4>
+    <hr/>
+
+    <form [formGroup]="fiterForm" (ngSubmit)="filterData()">
+      <div class="g-3">
+
+        <div class="col mb-3">
+          <label for="Type" class="form-label">Max price:</label>
+          <input type="number" class="form-control" placeholder="Max price" aria-label="Max price" formControlName="maxPrice">
+        </div>
+    
+        <div class="col mb-3">
+          <label for="Type" class="form-label">Min price:</label>
+          <input type="number" class="form-control" placeholder="Min price" aria-label="Min price" formControlName="minPrice">
+        </div>
+    
+        <div class="row  mb-3">
+          <label for="Type" class="form-label">Type:</label>
+          <div class="d-flex">
+            
+            <div class="form-check me-3">
+                <input class="form-check-input" type="radio" name="type" id="public" value="public" formControlName="type">
+                <label class="form-check-label" for="public">
+                    Public 
+                </label>
+            </div>
+  
+            <div class="form-check me-3">
+                <input class="form-check-input" type="radio" name="type" id="private" value="private" formControlName="type">
+                <label class="form-check-label" for="private">
+                    Private
+                </label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="type" id="all" value="" checked formControlName="type">
+              <label class="form-check-label" for="all">
+                  All
+              </label>
+          </div>
+          </div>
+        </div>
+        
+    
+        <div class="col mb-3">
+          <label for="Type" class="form-label">Amenities:</label>
+          <textarea id="amenities" class="form-control" cols="1" rows="1" formControlName="amenities" placeholder="Vigilancia, Departamento .."></textarea>
+        </div>
+
+        <div class="d-grid gap-2">
+          <button class="btn btn-primary" type="submit">Filter</button>
+        </div>
+    
+    </div>
+    </form>
+
+</div>
+
+

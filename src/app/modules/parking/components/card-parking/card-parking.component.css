@@ -1,0 +1,102 @@
+.card {
+    overflow: hidden;
+    border-start-start-radius: 35px;
+    border-bottom-left-radius: 35px;
+    border-top-right-radius: 35px;
+    border-bottom-right-radius: 35px;
+}
+
+img {
+    object-fit: cover;
+    height: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    border-start-start-radius: 35px;
+    border-bottom-left-radius: 35px;
+    -webkit-box-shadow: -1px 2px 8px -2px rgba(0,0,0,0.79);
+    -moz-box-shadow: -1px 2px 8px -2px rgba(0,0,0,0.79);
+    box-shadow: -1px 2px 8px -2px rgba(0,0,0,0.79);
+}
+
+img:hover {
+   background-size: 120%;
+}
+
+.h5 {
+    font-weight: 700;
+}
+
+h3 {
+    font-weight: 700;
+}
+
+.icon-circle {
+    border-radius: 50%;
+    background-color: rgb(22, 34, 49);
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #fff;
+    -webkit-box-shadow: -1px 2px 8px -2px rgba(0,0,0,0.79);
+    -moz-box-shadow: -1px 2px 8px -2px rgba(0,0,0,0.79);
+    box-shadow: -1px 2px 8px -2px rgba(0,0,0,0.79);
+}
+
+.text-color {
+    color: rgb(24, 43, 66);
+}
+
+@media (max-width: 1400px) { 
+    .card-amenitie {
+        width: 50%;
+    }
+}
+
+@media (min-width: 1200px) { 
+    .card-amenitie {
+        width: 50%;
+    }
+}
+
+@media (max-width: 992px) { 
+    .card-amenitie {
+        width: 50%;
+    }
+}
+
+
+@media (max-width: 768px) { 
+    .card-amenitie {
+        width: 100%;
+    }
+
+    .card {
+        border-start-start-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+
+    img {
+        border-start-start-radius: 10px;
+        border-bottom-left-radius: 0px;
+    }
+}
+
+@media (max-width: 576px) { 
+    .card-amenitie {
+        width: 100%;
+    }
+
+    .card {
+        border-start-start-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+
+    img {
+        border-start-start-radius: 10px;
+        border-bottom-left-radius: 0px;
+    }
+}
+ 
+  
